@@ -129,8 +129,12 @@ class Window(QMainWindow):
         for i in range(len(self.x1)):
             self.series2.append(self.a[i], self.b[i])
 
-        self.lineedittext2.setText(str(self.a))
-        self.lineedittext.setText(str(self.y1))
+        self.lineedittext2.setText('''
+        x
+        '''+str(self.a))
+        self.lineedittext.setText('''
+        y
+        '''+str(self.b))
 
     def clear_line(self):
         self.series2.clear()
@@ -142,7 +146,7 @@ class Window(QMainWindow):
         # self.x_axis.setTickCount(25)
 
         self.y_axis = QValueAxis()  # defines the y-axis
-        self.y_axis.setRange(0.00, 1)
+        self.y_axis.setRange(0.00, 4)
         # self.y_axis.setTickCount(16)
 
         self.chart.addAxis(self.x_axis, Qt.AlignBottom)
